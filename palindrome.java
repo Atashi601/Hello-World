@@ -1,24 +1,24 @@
 import java.util.Scanner;
-public class PalindromeCheck {
+
+public class Palindrome {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-      
-        System.out.print("Enter a number: ");
-        int num = sc.nextInt();
-        int original = num;
-        int reversed = 0;
+        // Input from user
+        System.out.print("Enter a string or number: ");
+        String input = sc.nextLine();
 
-      
-        while (num != 0) {
-            int digit = num % 10;
-            reversed = reversed * 10 + digit;
-            num /= 10;
-        
-        if (original == reversed) {
-            System.out.println(original + " is a Palindrome number.");
+        // Convert input to lowercase to handle case-insensitivity
+        String str = input.toLowerCase();
+
+        // Reverse the string
+        String reversed = new StringBuilder(str).reverse().toString();
+
+        // Check palindrome
+        if (str.equals(reversed)) {
+            System.out.println(input + " is a Palindrome.");
         } else {
-            System.out.println(original + " is NOT a Palindrome number.");
+            System.out.println(input + " is NOT a Palindrome.");
         }
 
         sc.close();
